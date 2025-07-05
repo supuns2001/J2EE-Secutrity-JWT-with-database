@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version = "3.0">
+    <persistence-unit name="j2eeSecurityApp" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>jiat_security</jta-data-source>
+<!--        <non-jta-data-source>jiat_security</non-jta-data-source>-->
+
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.transaction.jta.platform"
+                      value="org.hibernate.engine.transaction.jta.platform.internal.SunOneJtaPlatform"/>
+
+<!--            <property name="hibernate.cache.use_second_level_cache" value="true"/>-->
+<!--            <property name="hibernate.cache.region.factory_class"-->
+<!--                      value="org.hibernate.cache.jcache.internal.JCacheRegionFactory"/>-->
+
+<!--            <property name="hibernate.javax.cache.uri" value="ehcache.xml"/>-->
+
+        </properties>
+
+
+    </persistence-unit>
+
+</persistence>
